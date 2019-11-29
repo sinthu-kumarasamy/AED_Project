@@ -1,0 +1,13 @@
+
+Enterprise created Wel2 Type Welfare
+User Created forWel2
+wel2 Logs in
+Contribution Organization created
+Beneficiary Organization created
+Event Organization created
+Welfare Employee Created name:- Cont1
+Welfare Employee Created name:- Ben1
+Welfare Employee Created name:- Evt1
+Welfare User created- UserName- Cont1
+Welfare User created- UserName- Ben1
+Welfare User created- UserName- Evt1
