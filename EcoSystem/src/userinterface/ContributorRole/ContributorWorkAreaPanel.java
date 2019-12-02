@@ -82,7 +82,7 @@ public class ContributorWorkAreaPanel extends javax.swing.JPanel {
         EntName = new javax.swing.JTextField();
         imgLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(193, 161, 171));
+        setBackground(new java.awt.Color(140, 218, 218));
         setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
@@ -195,9 +195,9 @@ public class ContributorWorkAreaPanel extends javax.swing.JPanel {
         add(EntName);
         EntName.setBounds(680, 450, 140, 30);
 
-        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\img-4.jpg")); // NOI18N
+        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\don.png")); // NOI18N
         add(imgLabel);
-        imgLabel.setBounds(200, 110, 1140, 580);
+        imgLabel.setBounds(10, -40, 2480, 990);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addContBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addContBtnActionPerformed

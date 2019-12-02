@@ -46,7 +46,7 @@ public class WelfareAdminWorkAreaPanel extends javax.swing.JPanel {
         userJButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(193, 161, 171));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
@@ -91,9 +91,9 @@ public class WelfareAdminWorkAreaPanel extends javax.swing.JPanel {
         userJButton.setBounds(680, 470, 250, 50);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\img-4.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\help.jpg")); // NOI18N
         add(jLabel2);
-        jLabel2.setBounds(300, 140, 1038, 570);
+        jLabel2.setBounds(50, 0, 1390, 860);
     }// </editor-fold>//GEN-END:initComponents
 
     private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed

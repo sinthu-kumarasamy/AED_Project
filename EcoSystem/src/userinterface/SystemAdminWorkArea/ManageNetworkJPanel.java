@@ -65,7 +65,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         ImageLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(193, 161, 171));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
         networkJTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -104,13 +104,13 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         }
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(500, 180, 550, 250);
+        jScrollPane1.setBounds(520, 240, 550, 250);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Enter Network:");
         add(jLabel1);
-        jLabel1.setBounds(530, 500, 170, 28);
+        jLabel1.setBounds(630, 560, 170, 28);
 
         submitJButton.setBackground(new java.awt.Color(204, 153, 0));
         submitJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -122,13 +122,13 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             }
         });
         add(submitJButton);
-        submitJButton.setBounds(1010, 500, 80, 40);
+        submitJButton.setBounds(760, 630, 80, 40);
 
         nameJTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         nameJTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(102, 102, 102), new java.awt.Color(0, 153, 153), new java.awt.Color(102, 102, 102), new java.awt.Color(0, 153, 153)));
         nameJTextField.setMargin(new java.awt.Insets(10, 10, 10, 10));
         add(nameJTextField);
-        nameJTextField.setBounds(700, 500, 220, 40);
+        nameJTextField.setBounds(810, 550, 220, 40);
 
         backJButton.setBackground(new java.awt.Color(153, 102, 0));
         backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -142,9 +142,10 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(backJButton);
         backJButton.setBounds(110, 700, 110, 50);
 
-        ImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\img-4.jpg")); // NOI18N
+        ImageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\net1.jpg")); // NOI18N
         add(ImageLabel);
-        ImageLabel.setBounds(240, -120, 1230, 900);
+        ImageLabel.setBounds(160, 0, 1290, 920);
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed

@@ -14,6 +14,7 @@ import Business.Organization.HealthOrganization;
 import Business.Organization.Organization;
 import Business.Organization.WelfareOrganization;
 import Business.UserAccount.UserAccount;
+import java.awt.Font;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -36,6 +37,9 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
         this.ecosystem=business;
+        bentable.getTableHeader().setFont(new Font("TImes New Roman",Font.BOLD,18));
+        bentable.setRowHeight(30);
+       bentable.setRowMargin(10);
         populateTable();
         populateComboBox();
     }
@@ -100,7 +104,13 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
         availabeAssitant = new javax.swing.JComboBox<>();
         assignBtn = new javax.swing.JButton();
         checkBtn = new javax.swing.JButton();
+        imgLabel = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(241, 236, 236));
+        setLayout(null);
+
+        bentable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bentable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         bentable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -117,6 +127,7 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        bentable.setRowHeight(20);
         bentable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bentableMouseClicked(evt);
@@ -124,66 +135,51 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(bentable);
 
-        jLabel1.setText("Available Assistant:");
+        add(jScrollPane1);
+        jScrollPane1.setBounds(350, 120, 452, 170);
 
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setText("Available Assistant:");
+        add(jLabel1);
+        jLabel1.setBounds(411, 330, 160, 22);
+
+        availabeAssitant.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         availabeAssitant.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        availabeAssitant.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 0, 51)));
         availabeAssitant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 availabeAssitantActionPerformed(evt);
             }
         });
+        add(availabeAssitant);
+        availabeAssitant.setBounds(580, 330, 110, 30);
 
+        assignBtn.setBackground(new java.awt.Color(102, 102, 0));
+        assignBtn.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         assignBtn.setText("Assign Assistant");
         assignBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignBtnActionPerformed(evt);
             }
         });
+        add(assignBtn);
+        assignBtn.setBounds(660, 440, 197, 40);
 
+        checkBtn.setBackground(new java.awt.Color(102, 102, 0));
+        checkBtn.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         checkBtn.setText("Checkup done");
         checkBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkBtnActionPerformed(evt);
             }
         });
+        add(checkBtn);
+        checkBtn.setBounds(310, 440, 180, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(199, 199, 199)
-                        .addComponent(jLabel1)
-                        .addGap(27, 27, 27)
-                        .addComponent(availabeAssitant, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(checkBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
-                .addComponent(assignBtn)
-                .addGap(210, 210, 210))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(availabeAssitant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(checkBtn)
-                    .addComponent(assignBtn))
-                .addContainerGap(212, Short.MAX_VALUE))
-        );
+        imgLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\doc.jpg")); // NOI18N
+        add(imgLabel);
+        imgLabel.setBounds(220, 0, 1120, 810);
     }// </editor-fold>//GEN-END:initComponents
 
     private void availabeAssitantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_availabeAssitantActionPerformed
@@ -262,6 +258,7 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> availabeAssitant;
     private javax.swing.JTable bentable;
     private javax.swing.JButton checkBtn;
+    private javax.swing.JLabel imgLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

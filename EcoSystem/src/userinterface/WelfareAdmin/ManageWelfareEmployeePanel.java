@@ -89,7 +89,7 @@ public class ManageWelfareEmployeePanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         imgLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(193, 161, 171));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
         organizationJTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -171,9 +171,9 @@ public class ManageWelfareEmployeePanel extends javax.swing.JPanel {
         jLabel3.setBounds(680, 470, 220, 28);
 
         imgLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\img-4.jpg")); // NOI18N
+        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\help.jpg")); // NOI18N
         add(imgLabel);
-        imgLabel.setBounds(400, 90, 970, 810);
+        imgLabel.setBounds(20, -70, 1540, 1000);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed

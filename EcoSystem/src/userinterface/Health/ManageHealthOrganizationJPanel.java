@@ -83,7 +83,7 @@ public class ManageHealthOrganizationJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         imageLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(193, 161, 171));
+        setBackground(new java.awt.Color(164, 208, 204));
         setLayout(null);
 
         organizationJTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -119,7 +119,7 @@ public class ManageHealthOrganizationJPanel extends javax.swing.JPanel {
         }
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(610, 230, 480, 120);
+        jScrollPane1.setBounds(480, 210, 480, 120);
 
         addJButton.setBackground(new java.awt.Color(102, 0, 102));
         addJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -130,7 +130,7 @@ public class ManageHealthOrganizationJPanel extends javax.swing.JPanel {
             }
         });
         add(addJButton);
-        addJButton.setBounds(800, 470, 180, 40);
+        addJButton.setBounds(660, 450, 180, 40);
 
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         organizationJComboBox.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(97, 17, 73)));
@@ -140,12 +140,12 @@ public class ManageHealthOrganizationJPanel extends javax.swing.JPanel {
             }
         });
         add(organizationJComboBox);
-        organizationJComboBox.setBounds(930, 390, 110, 30);
+        organizationJComboBox.setBounds(810, 370, 110, 30);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Organization Type :");
         add(jLabel1);
-        jLabel1.setBounds(710, 390, 220, 28);
+        jLabel1.setBounds(590, 370, 220, 28);
 
         backJButton.setBackground(new java.awt.Color(153, 102, 0));
         backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -160,9 +160,9 @@ public class ManageHealthOrganizationJPanel extends javax.swing.JPanel {
         backJButton.setBounds(250, 700, 110, 40);
 
         imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\img-4.jpg")); // NOI18N
+        imageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\health.jpeg")); // NOI18N
         add(imageLabel);
-        imageLabel.setBounds(290, 150, 1150, 540);
+        imageLabel.setBounds(90, 0, 1260, 860);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed

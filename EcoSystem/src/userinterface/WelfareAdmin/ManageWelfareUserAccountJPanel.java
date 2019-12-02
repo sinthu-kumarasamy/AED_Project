@@ -122,8 +122,9 @@ public class ManageWelfareUserAccountJPanel extends javax.swing.JPanel {
         roleJComboBox = new javax.swing.JComboBox();
         passwordJTextField = new javax.swing.JPasswordField();
         organizationJComboBox = new javax.swing.JComboBox();
+        imgLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(193, 161, 171));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
         createUserJButton.setBackground(new java.awt.Color(102, 0, 102));
@@ -245,6 +246,11 @@ public class ManageWelfareUserAccountJPanel extends javax.swing.JPanel {
         });
         add(organizationJComboBox);
         organizationJComboBox.setBounds(750, 382, 146, 30);
+
+        imgLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\help.jpg")); // NOI18N
+        add(imgLabel);
+        imgLabel.setBounds(70, 0, 1380, 900);
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
@@ -302,6 +308,7 @@ public class ManageWelfareUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backjButton1;
     private javax.swing.JButton createUserJButton;
     private javax.swing.JComboBox employeeJComboBox;
+    private javax.swing.JLabel imgLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

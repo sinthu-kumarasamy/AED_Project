@@ -128,7 +128,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane.setLeftComponent(jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(193, 161, 171));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
 
         jLabel1.setText("Selected Node:");
@@ -149,7 +149,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(btnManageNetwork);
-        btnManageNetwork.setBounds(620, 210, 320, 60);
+        btnManageNetwork.setBounds(580, 270, 320, 60);
 
         btnManageEnterprise.setBackground(new java.awt.Color(153, 153, 0));
         btnManageEnterprise.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -161,7 +161,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(btnManageEnterprise);
-        btnManageEnterprise.setBounds(620, 320, 320, 60);
+        btnManageEnterprise.setBounds(580, 380, 320, 60);
 
         btnManageAdmin.setBackground(new java.awt.Color(153, 153, 0));
         btnManageAdmin.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -173,7 +173,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(btnManageAdmin);
-        btnManageAdmin.setBounds(620, 450, 320, 60);
+        btnManageAdmin.setBounds(580, 490, 320, 60);
 
         viewStat.setBackground(new java.awt.Color(153, 153, 0));
         viewStat.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -185,12 +185,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(viewStat);
-        viewStat.setBounds(630, 560, 310, 60);
+        viewStat.setBounds(590, 600, 310, 60);
 
         imgLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\img-4.jpg")); // NOI18N
+        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\net1.jpg")); // NOI18N
         jPanel2.add(imgLabel);
-        imgLabel.setBounds(280, 40, 1038, 780);
+        imgLabel.setBounds(10, 10, 1460, 950);
 
         jSplitPane.setRightComponent(jPanel2);
 

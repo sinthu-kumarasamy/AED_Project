@@ -93,7 +93,7 @@ public class EventManagerWorkAreaPanel extends javax.swing.JPanel {
         evtCity = new javax.swing.JTextField();
         imgLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(193, 161, 171));
+        setBackground(new java.awt.Color(140, 218, 218));
         setLayout(null);
 
         eventJTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -176,9 +176,9 @@ public class EventManagerWorkAreaPanel extends javax.swing.JPanel {
         add(evtCity);
         evtCity.setBounds(840, 440, 160, 40);
 
-        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\img-4.jpg")); // NOI18N
+        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\don.png")); // NOI18N
         add(imgLabel);
-        imgLabel.setBounds(270, 90, 1280, 660);
+        imgLabel.setBounds(20, 90, 1560, 660);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed

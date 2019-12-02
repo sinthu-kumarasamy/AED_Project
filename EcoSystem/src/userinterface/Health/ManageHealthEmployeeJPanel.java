@@ -92,7 +92,7 @@ public class ManageHealthEmployeeJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         imgLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(193, 161, 171));
+        setBackground(new java.awt.Color(164, 208, 204));
         setLayout(null);
 
         organizationJTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -127,7 +127,7 @@ public class ManageHealthEmployeeJPanel extends javax.swing.JPanel {
         }
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(610, 270, 530, 170);
+        jScrollPane1.setBounds(450, 270, 530, 170);
 
         addJButton.setBackground(new java.awt.Color(102, 0, 102));
         addJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -139,7 +139,7 @@ public class ManageHealthEmployeeJPanel extends javax.swing.JPanel {
             }
         });
         add(addJButton);
-        addJButton.setBounds(860, 640, 160, 40);
+        addJButton.setBounds(680, 650, 160, 40);
 
         backJButton.setBackground(new java.awt.Color(153, 102, 0));
         backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -156,27 +156,27 @@ public class ManageHealthEmployeeJPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setText("  Employee Name:");
         add(jLabel2);
-        jLabel2.setBounds(710, 540, 190, 28);
+        jLabel2.setBounds(560, 540, 190, 28);
 
         nameJTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         nameJTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(97, 17, 73)));
         add(nameJTextField);
-        nameJTextField.setBounds(920, 540, 150, 40);
+        nameJTextField.setBounds(780, 540, 150, 40);
 
         organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         organizationEmpJComboBox.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(97, 17, 73)));
         add(organizationEmpJComboBox);
-        organizationEmpJComboBox.setBounds(920, 470, 150, 40);
+        organizationEmpJComboBox.setBounds(780, 460, 150, 40);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel3.setText("Select Organization:");
         add(jLabel3);
-        jLabel3.setBounds(680, 470, 220, 28);
+        jLabel3.setBounds(540, 470, 220, 28);
 
         imgLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\img-4.jpg")); // NOI18N
+        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\health.jpeg")); // NOI18N
         add(imgLabel);
-        imgLabel.setBounds(400, 90, 970, 810);
+        imgLabel.setBounds(-70, 0, 1720, 940);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed

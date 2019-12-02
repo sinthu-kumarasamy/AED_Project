@@ -134,7 +134,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         imageLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(193, 161, 171));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
         enterpriseJTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -159,12 +159,12 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(enterpriseJTable);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(470, 250, 730, 190);
+        jScrollPane1.setBounds(470, 310, 730, 190);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("Network:");
         add(jLabel1);
-        jLabel1.setBounds(697, 470, 80, 22);
+        jLabel1.setBounds(670, 530, 80, 22);
 
         networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         networkJComboBox.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 0, 102)));
@@ -174,22 +174,22 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(networkJComboBox);
-        networkJComboBox.setBounds(790, 462, 136, 30);
+        networkJComboBox.setBounds(790, 520, 140, 30);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Username:");
         add(jLabel2);
-        jLabel2.setBounds(680, 570, 90, 22);
+        jLabel2.setBounds(670, 620, 90, 22);
 
         usernameJTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         usernameJTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 0, 102)));
         add(usernameJTextField);
-        usernameJTextField.setBounds(790, 570, 140, 30);
+        usernameJTextField.setBounds(790, 610, 140, 30);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Enterprise:");
         add(jLabel3);
-        jLabel3.setBounds(680, 520, 90, 22);
+        jLabel3.setBounds(660, 570, 90, 22);
 
         enterpriseJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         enterpriseJComboBox.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 0, 102)));
@@ -199,7 +199,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(enterpriseJComboBox);
-        enterpriseJComboBox.setBounds(790, 520, 136, 30);
+        enterpriseJComboBox.setBounds(790, 560, 140, 30);
 
         submitJButton.setBackground(new java.awt.Color(102, 0, 102));
         submitJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -211,26 +211,26 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(submitJButton);
-        submitJButton.setBounds(810, 730, 90, 40);
+        submitJButton.setBounds(810, 780, 90, 40);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Password:");
         add(jLabel4);
-        jLabel4.setBounds(690, 620, 80, 22);
+        jLabel4.setBounds(680, 670, 80, 22);
 
         nameJTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 0, 102)));
         add(nameJTextField);
-        nameJTextField.setBounds(790, 670, 140, 30);
+        nameJTextField.setBounds(790, 710, 140, 30);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Name:");
         add(jLabel5);
-        jLabel5.setBounds(710, 670, 50, 22);
+        jLabel5.setBounds(710, 720, 50, 22);
 
         passwordJPasswordField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         passwordJPasswordField.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 0, 102)));
         add(passwordJPasswordField);
-        passwordJPasswordField.setBounds(790, 620, 140, 30);
+        passwordJPasswordField.setBounds(790, 660, 140, 30);
 
         backJButton.setBackground(new java.awt.Color(153, 102, 0));
         backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -244,9 +244,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         add(backJButton);
         backJButton.setBounds(240, 810, 90, 40);
 
-        imageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\img-4.jpg")); // NOI18N
+        imageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\net2.jpg")); // NOI18N
         add(imageLabel);
-        imageLabel.setBounds(390, 180, 1090, 630);
+        imageLabel.setBounds(330, -20, 1430, 1080);
     }// </editor-fold>//GEN-END:initComponents
 
     private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed

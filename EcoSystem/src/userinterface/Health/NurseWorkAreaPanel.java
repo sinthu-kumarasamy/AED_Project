@@ -13,6 +13,7 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.WelfareOrganization;
 import Business.UserAccount.UserAccount;
+import java.awt.Font;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -38,6 +39,10 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.account = account;
         this.ecosystem=business;
+        bentable.getTableHeader().setFont(new Font("TImes New Roman",Font.BOLD,18));
+        bentable.setRowHeight(30);
+       bentable.setRowMargin(10);
+        populateTable();
         populateTable();
     }
     
@@ -91,7 +96,13 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         pulseField = new javax.swing.JTextField();
         addBtn = new javax.swing.JButton();
+        imgLabel = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(179, 233, 228));
+        setLayout(null);
+
+        bentable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bentable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         bentable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -108,6 +119,7 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        bentable.setRowHeight(20);
         bentable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bentableMouseClicked(evt);
@@ -115,90 +127,69 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(bentable);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(500, 80, 452, 170);
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("Patient Name:");
+        add(jLabel1);
+        jLabel1.setBounds(630, 290, 120, 22);
 
+        patientName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(113, 88, 20), 3));
+        add(patientName);
+        patientName.setBounds(760, 290, 150, 30);
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Blood Pressure:");
+        add(jLabel2);
+        jLabel2.setBounds(620, 350, 130, 22);
 
+        bpField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(113, 88, 20), 3));
+        add(bpField);
+        bpField.setBounds(760, 350, 150, 30);
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Temperature:");
+        add(jLabel3);
+        jLabel3.setBounds(640, 410, 110, 22);
 
+        tempField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(113, 88, 20), 3));
+        add(tempField);
+        tempField.setBounds(760, 410, 150, 30);
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("HeartBeat rate:");
+        add(jLabel4);
+        jLabel4.setBounds(630, 470, 140, 22);
 
+        heartrateField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(113, 88, 20), 3));
+        add(heartrateField);
+        heartrateField.setBounds(760, 470, 150, 30);
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Pulse:");
+        add(jLabel5);
+        jLabel5.setBounds(700, 540, 50, 22);
 
+        pulseField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(113, 88, 20), 3));
+        add(pulseField);
+        pulseField.setBounds(760, 540, 150, 30);
+
+        addBtn.setBackground(new java.awt.Color(204, 102, 0));
+        addBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         addBtn.setText("Add ");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
             }
         });
+        add(addBtn);
+        addBtn.setBounds(750, 630, 71, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(203, 203, 203)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel5)))
-                                    .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(heartrateField, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                                    .addComponent(pulseField)
-                                    .addComponent(tempField)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(patientName, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(bpField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(260, 260, 260)
-                        .addComponent(addBtn)))
-                .addContainerGap(194, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(patientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(bpField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(tempField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(heartrateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(pulseField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addComponent(addBtn)
-                .addContainerGap(90, Short.MAX_VALUE))
-        );
+        imgLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\nurse.jpg")); // NOI18N
+        add(imgLabel);
+        imgLabel.setBounds(50, 0, 1390, 1060);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
@@ -250,6 +241,7 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
     private javax.swing.JTable bentable;
     private javax.swing.JTextField bpField;
     private javax.swing.JTextField heartrateField;
+    private javax.swing.JLabel imgLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

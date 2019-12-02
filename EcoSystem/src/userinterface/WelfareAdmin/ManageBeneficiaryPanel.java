@@ -93,7 +93,7 @@ public class ManageBeneficiaryPanel extends javax.swing.JPanel {
         EntName = new javax.swing.JTextField();
         imageLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(193, 161, 171));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
         bentable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -118,38 +118,38 @@ public class ManageBeneficiaryPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(bentable);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(540, 250, 790, 160);
+        jScrollPane1.setBounds(390, 230, 790, 160);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("Beneficiary Name:");
         add(jLabel1);
-        jLabel1.setBounds(745, 460, 150, 22);
+        jLabel1.setBounds(590, 450, 150, 22);
 
         beneName.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         beneName.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 0, 102)));
         add(beneName);
-        beneName.setBounds(920, 452, 150, 30);
+        beneName.setBounds(760, 450, 150, 30);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("  Beneficiary City :");
         add(jLabel2);
-        jLabel2.setBounds(740, 510, 150, 22);
+        jLabel2.setBounds(580, 510, 150, 22);
 
         beneCity.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         beneCity.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 0, 102)));
         add(beneCity);
-        beneCity.setBounds(920, 510, 150, 30);
+        beneCity.setBounds(760, 510, 150, 30);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Assistance Type:");
         add(jLabel3);
-        jLabel3.setBounds(750, 560, 130, 22);
+        jLabel3.setBounds(590, 570, 130, 22);
 
         assisTypeItem.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         assisTypeItem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Food", "Fund", "Employment", "HealthCare" }));
         assisTypeItem.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 0, 102)));
         add(assisTypeItem);
-        assisTypeItem.setBounds(920, 560, 150, 30);
+        assisTypeItem.setBounds(760, 570, 150, 30);
 
         submitBtn.setBackground(new java.awt.Color(102, 0, 102));
         submitBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -160,22 +160,22 @@ public class ManageBeneficiaryPanel extends javax.swing.JPanel {
             }
         });
         add(submitBtn);
-        submitBtn.setBounds(920, 680, 90, 40);
+        submitBtn.setBounds(740, 700, 90, 40);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Enterprise Name:");
         add(jLabel4);
-        jLabel4.setBounds(739, 610, 140, 22);
+        jLabel4.setBounds(590, 620, 140, 22);
 
         EntName.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         EntName.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 0, 102)));
         add(EntName);
-        EntName.setBounds(920, 610, 150, 30);
+        EntName.setBounds(760, 620, 150, 30);
 
         imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\img-4.jpg")); // NOI18N
+        imageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\ben.jpg")); // NOI18N
         add(imageLabel);
-        imageLabel.setBounds(320, 110, 1120, 720);
+        imageLabel.setBounds(90, -60, 1290, 940);
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed

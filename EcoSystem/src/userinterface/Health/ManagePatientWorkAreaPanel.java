@@ -14,6 +14,7 @@ import Business.Organization.HealthOrganization;
 import Business.Organization.Organization;
 import Business.Organization.WelfareOrganization;
 import Business.UserAccount.UserAccount;
+import java.awt.Font;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -38,6 +39,10 @@ public class ManagePatientWorkAreaPanel extends javax.swing.JPanel {
         this.ecosystem = system;
         this.organization = (HealthOrganization)organization;
         this.healthenterprise = healthenterprise;
+        patientTable.getTableHeader().setFont(new Font("TImes New Roman",Font.BOLD,18));
+        patientTable.setRowHeight(30);
+      patientTable.setRowMargin(10);
+        populateTable();
         populateDoctorCombo();
         populateTable();
         
@@ -104,7 +109,12 @@ public class ManagePatientWorkAreaPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         DoctorComboBox = new javax.swing.JComboBox<>();
         assigndocbtn = new javax.swing.JButton();
+        imgLabel = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(164, 208, 204));
+        setLayout(null);
+
+        patientTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         patientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -121,57 +131,42 @@ public class ManagePatientWorkAreaPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        patientTable.setRowHeight(20);
         jScrollPane1.setViewportView(patientTable);
 
-        jLabel1.setText("Available Doctor");
+        add(jScrollPane1);
+        jScrollPane1.setBounds(550, 100, 507, 144);
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setText("Available Doctor:");
+        add(jLabel1);
+        jLabel1.setBounds(650, 300, 190, 22);
 
         DoctorComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        DoctorComboBox.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 153, 0)));
         DoctorComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DoctorComboBoxActionPerformed(evt);
             }
         });
+        add(DoctorComboBox);
+        DoctorComboBox.setBounds(850, 300, 110, 30);
 
+        assigndocbtn.setBackground(new java.awt.Color(153, 153, 0));
+        assigndocbtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         assigndocbtn.setText("Assign Doctor");
         assigndocbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assigndocbtnActionPerformed(evt);
             }
         });
+        add(assigndocbtn);
+        assigndocbtn.setBounds(770, 370, 150, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(237, 237, 237)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(154, 154, 154)
-                .addComponent(DoctorComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(183, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(131, 131, 131))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(assigndocbtn)
-                        .addGap(228, 228, 228))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DoctorComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(94, 94, 94)
-                .addComponent(assigndocbtn)
-                .addContainerGap(261, Short.MAX_VALUE))
-        );
+        imgLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\health.jpeg")); // NOI18N
+        add(imgLabel);
+        imgLabel.setBounds(70, 0, 1490, 820);
     }// </editor-fold>//GEN-END:initComponents
 
     private void assigndocbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assigndocbtnActionPerformed
@@ -207,6 +202,7 @@ public class ManagePatientWorkAreaPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> DoctorComboBox;
     private javax.swing.JButton assigndocbtn;
+    private javax.swing.JLabel imgLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable patientTable;

@@ -111,7 +111,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         imageLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(193, 161, 171));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
         enterpriseJTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -138,37 +138,37 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(enterpriseJTable);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(550, 190, 660, 220);
+        jScrollPane1.setBounds(390, 190, 660, 220);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Network:");
         add(jLabel1);
-        jLabel1.setBounds(770, 450, 100, 28);
+        jLabel1.setBounds(590, 450, 100, 28);
 
         networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         networkJComboBox.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 0, 102)));
         add(networkJComboBox);
-        networkJComboBox.setBounds(910, 450, 136, 30);
+        networkJComboBox.setBounds(710, 450, 136, 30);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setText("Name:");
         add(jLabel2);
-        jLabel2.setBounds(810, 570, 70, 28);
+        jLabel2.setBounds(620, 580, 70, 28);
 
         nameJTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         nameJTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 0, 102)));
         add(nameJTextField);
-        nameJTextField.setBounds(910, 570, 140, 30);
+        nameJTextField.setBounds(710, 580, 140, 30);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel3.setText("Enterprise Type:");
         add(jLabel3);
-        jLabel3.setBounds(700, 510, 175, 28);
+        jLabel3.setBounds(520, 520, 175, 28);
 
         enterpriseTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         enterpriseTypeJComboBox.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 0, 102)));
         add(enterpriseTypeJComboBox);
-        enterpriseTypeJComboBox.setBounds(910, 510, 136, 30);
+        enterpriseTypeJComboBox.setBounds(710, 520, 136, 30);
 
         submitJButton.setBackground(new java.awt.Color(102, 0, 102));
         submitJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -180,7 +180,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         });
         add(submitJButton);
-        submitJButton.setBounds(940, 650, 80, 40);
+        submitJButton.setBounds(700, 660, 80, 40);
 
         backJButton.setBackground(new java.awt.Color(153, 102, 0));
         backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -194,9 +194,9 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         add(backJButton);
         backJButton.setBounds(100, 750, 110, 50);
 
-        imageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\img-4.jpg")); // NOI18N
+        imageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\net2.jpg")); // NOI18N
         add(imageLabel);
-        imageLabel.setBounds(420, 40, 980, 790);
+        imageLabel.setBounds(250, -20, 1380, 1070);
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
