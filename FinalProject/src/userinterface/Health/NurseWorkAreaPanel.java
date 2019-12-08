@@ -54,16 +54,12 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
               for(WelfareOrganization org:ent.getWelfareOrganizationDirectory().getWelfareOrganizationList()){
                   if(org.getName().equals("Beneficiary Organization")){
                     for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
-                     if(ben.getAssistantName()!=null){
+                     if(ben.getAssistanceType().equals("HealthCare") && ben.getAssistantName()!=null){
                         if(ben.getAssistantName().equals(account.getEmployee().getName())){
                              Object[] row = new Object[dtm.getColumnCount()];
                               row[0] = ben.getBeneficiaryId();
                               row[1] = ben.getBeneficiaryName();
-                              if(ben.getCheckStatus().equals("Test Completed")){
-                                  row[2]=ben.getCheckStatus();
-                              }else{
-                                  row[2]=ben.getCheckStatus();
-                              }
+                              row[2]=ben.getDocStatus();
                               dtm.addRow(row);
                         }
                      }
@@ -214,7 +210,7 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
                                ben.setBp(bp);
                                ben.setHeartrate(heartRate);
                                ben.setPulse(pulse);
-                               ben.setCheckStatus("Test Completed");
+                              ben.setDocStatus("Test Completed");
                                populateTable();
                                 JOptionPane.showMessageDialog(null, "Necessary test taken for this user", "Suceess",JOptionPane.PLAIN_MESSAGE);
                            }

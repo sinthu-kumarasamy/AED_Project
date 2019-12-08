@@ -7,12 +7,15 @@ package userinterface.WelfareAdmin;
 
 import Business.Beneficiaries.Beneficiary;
 import Business.EcoSystem;
+import Business.Enterprise.HealthEnterprise;
 import Business.Enterprise.WelfareEnterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.WelfareOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -118,6 +121,11 @@ public class ManageBeneficiaryPanel extends javax.swing.JPanel {
             }
         });
         bentable.setRowHeight(20);
+        bentable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bentableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(bentable);
 
         add(jScrollPane1);
@@ -176,7 +184,7 @@ public class ManageBeneficiaryPanel extends javax.swing.JPanel {
         EntName.setBounds(760, 620, 150, 30);
 
         imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\Documents\\AED\\finalproject\\EcoSystem (1)\\EcoSystem\\src\\ben.jpg")); // NOI18N
+        imageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sindhu\\AED_LAB\\Final\\FinalProject\\src\\ben.jpg")); // NOI18N
         add(imageLabel);
         imageLabel.setBounds(90, -60, 1290, 940);
     }// </editor-fold>//GEN-END:initComponents
@@ -211,6 +219,44 @@ public class ManageBeneficiaryPanel extends javax.swing.JPanel {
        
         populateTable();
     }//GEN-LAST:event_submitBtnActionPerformed
+
+    private void bentableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bentableMouseClicked
+        // TODO add your handling code here:
+         DefaultTableModel dtm = (DefaultTableModel)bentable.getModel();
+        int selectedRow = bentable.getSelectedRow();
+        String assType = (String) bentable.getValueAt(selectedRow,3);
+        String benCity =  (String) bentable.getValueAt(selectedRow,2);
+        int benId = (int)bentable.getValueAt(selectedRow,0);
+        ArrayList<String>entList = new ArrayList<String>();
+        if(assType.equals("HealthCare")){
+            for(Network net:ecosystem.getNetworkList()){
+                if(net.getName().equals(benCity)){
+                    for(HealthEnterprise hel:net.getEnterpriseDirectory().getHospitalnterpriseList()){
+                        entList.add(hel.getName());
+                    }
+                }
+            }
+            if(entList.size()>0){
+                Object selectedHel = JOptionPane.showInputDialog(null,"Choose a healthcare","HealthCare selection",JOptionPane.QUESTION_MESSAGE,null,entList.toArray(),entList.get(0));
+                for(Network net:ecosystem.getNetworkList()){
+                    for(WelfareEnterprise ent:net.getEnterpriseDirectory().getWelfareEnterpriseList()){
+                        for(WelfareOrganization org:ent.getWelfareOrganizationDirectory().getWelfareOrganizationList()){
+                            for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
+                                if(benId==ben.getBeneficiaryId()){
+                                    if(benId==ben.getBeneficiaryId()){
+                                        ben.setAssignedHel(selectedHel.toString());
+                                        ben.setStatus("Assigned"+assType);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+       
+      populateTable();
+    }//GEN-LAST:event_bentableMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
