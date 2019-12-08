@@ -10,6 +10,8 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -156,6 +158,16 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         network.setName(name);
 
         populateNetworkTable();
+        if(!nameJTextField.getText().matches("[a-z A-Z]+")){
+            JOptionPane.showMessageDialog(null,"Please enter a valid network name");
+                 nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+                 nameJTextField.setText("");
+              }
+         else
+         {
+               nameJTextField.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+                 nameJTextField.setText("");
+         }
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
