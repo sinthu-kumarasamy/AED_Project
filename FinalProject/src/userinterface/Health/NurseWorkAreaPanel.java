@@ -213,30 +213,31 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
                         for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
                            if(ben.getBeneficiaryName().equals(patient_name)){
                                
-                                if(patientName.getText().equals("") || !patientName.getText().matches("[a-zA-Z]+") ){
-                                                JOptionPane.showMessageDialog(null,"Enter Valid patient name");
-//                                                patientName.setBorder(BorderFactory.createLineBorder(Color.RED,3));
-//                                                
-                                                patientName.setText("");
+                               // if(patientName.getText().equals("") || bpField.getText().isEmpty() || tempField.getText().isEmpty() || heartrateField.getText().isEmpty() || pulseField.getText().isEmpty()){
+                                                
+                                           //      JOptionPane.showMessageDialog(null,"Input fields can't be empty");
+            
+//                                                patientName.setText("");
 
-                                        }else if(bpField.getText().isEmpty()||bpField.getText().matches("[0-9]+")){
-//                                            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
-                           
-                                            bpField.setText("");
-                                        }
-                                      else if(tempField.getText().isEmpty()||tempField.getText().matches("[0-9]+")){
-//                                            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
-                                            tempField.setText("");
-                                        }
-                                       else if(heartrateField.getText().isEmpty()||heartrateField.getText().matches("[0-9]+")){
-//                                            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
-                                            heartrateField.setText("");
-                                        }
-                                        else if(pulseField.getText().isEmpty()|| pulseField.getText().matches("[0-9]+")){
-//                                            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
-                                            pulseField.setText("");
-                                        }
-                               
+//                                        }else if(bpField.getText().isEmpty()||bpField.getText().matches("[0-9]+")){
+////                                            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
+//                           
+//                                            bpField.setText("");
+//                                        }
+//                                      else if(tempField.getText().isEmpty()||tempField.getText().matches("[0-9]+")){
+////                                            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
+//                                            tempField.setText("");
+//                                        }
+//                                       else if(heartrateField.getText().isEmpty()||heartrateField.getText().matches("[0-9]+")){
+////                                            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
+//                                            heartrateField.setText("");
+//                                        }
+//                                        else if(pulseField.getText().isEmpty()|| pulseField.getText().matches("[0-9]+")){
+////                                            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
+//                                            pulseField.setText("");
+//                                        }
+                               // }
+                              //  else{
                                ben.setTemp(temp);
                                ben.setBp(bp);
                                ben.setHeartrate(heartRate);
@@ -244,14 +245,20 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
                                ben.setCheckStatus("Test Completed");
                                populateTable();
                                 JOptionPane.showMessageDialog(null, "Necessary test taken for this user", "Suceess",JOptionPane.PLAIN_MESSAGE);
-                           }
+                                patientName.setText("");
+                                bpField.setText("");
+                                tempField.setText("");
+                                heartrateField.setText("");
+                                pulseField.setText("");
+                           //}
                         }
                       }
                   }
                 }
             }
+            }
         }
-        
+    
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void bentableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bentableMouseClicked
@@ -260,6 +267,7 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
         String patient_name = (String) bentable.getValueAt(selectedRow,1);
         patientName.setText(patient_name);
         patientName.setEditable(false);
+        
     }//GEN-LAST:event_bentableMouseClicked
 
 

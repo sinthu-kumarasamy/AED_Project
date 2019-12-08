@@ -1,12 +1,4 @@
 
-Enterprise created hel Type Health
-User Created forAdmin
 User Created forhel
-Doctor Organization created
-ManagePatient Organization created
-Lab Organization created
-Health Employee Created name:- doc
-Health Employee Created name:- doc1
-Health User created- UserName- doc
-Health Employee Created name:- nur
-Health User created- UserName- nur
+Health Employee Created name:- rec
+Health User created- UserName- rec1

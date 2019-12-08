@@ -189,27 +189,36 @@ public class ManageBeneficiaryPanel extends javax.swing.JPanel {
         String ben_city = beneCity.getText();
         String ass_type = assisTypeItem.getSelectedItem().toString();
         String entname = EntName.getText();
+//         if(beneName.getText().equals("") || !beneName.getText().matches("[a-z A-Z 0-9]+")){
+//                JOptionPane.showMessageDialog(null,"Please enter an valid beneficiary name");
+////                beneName.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+////                jLabel1.setForeground(Color.RED);
+////                beneName.setText("");
+//            }
+//            if(beneCity.getText().equals("") || !beneCity.getText().matches("[a-z A-Z]+") ){
+//               JOptionPane.showMessageDialog(null,"Enter Valid City");
+////               beneCity.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+////               jLabel2.setForeground(Color.red);
+////               beneCity.setText("");   
+//           }
+//            if(EntName.getText().equals("") || !EntName.getText().matches("[a-z A-Z 0-9]+")){
+//                JOptionPane.showMessageDialog(null,"Please enter an valid enterprise name");
+////                EntName.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+////                jLabel4.setForeground(Color.RED);
+////                EntName.setText("");
+//            }
+         if(beneName.getText().equals("") || beneCity.getText().equals("")){
+             JOptionPane.showMessageDialog(null,"Please enter all details");
+         }
+         else {
         organization.getBeneficiaryDirectory().addBeneficiary(count, ben_name, ben_city, ass_type, entname);
-         if(beneName.getText().equals("") || !beneName.getText().matches("[a-zA-Z0-9]+")){
-                JOptionPane.showMessageDialog(null,"Please enter an valid beneficiary name");
-//                beneName.setBorder(BorderFactory.createLineBorder(Color.RED,3));
-//                jLabel1.setForeground(Color.RED);
-//                beneName.setText("");
-            }
-            if(beneCity.getText().equals("") || !beneCity.getText().matches("[a-zA-Z]+") ){
-               JOptionPane.showMessageDialog(null,"Enter Valid City");
-//               beneCity.setBorder(BorderFactory.createLineBorder(Color.RED,3));
-//               jLabel2.setForeground(Color.red);
-//               beneCity.setText("");   
-           }
-            if(EntName.getText().equals("") || !EntName.getText().matches("[a-zA-Z0-9]+")){
-                JOptionPane.showMessageDialog(null,"Please enter an valid enterprise name");
-//                EntName.setBorder(BorderFactory.createLineBorder(Color.RED,3));
-//                jLabel4.setForeground(Color.RED);
-//                EntName.setText("");
-            }
-       
+        JOptionPane.showMessageDialog(null, "Added event successfully", "Suceess",JOptionPane.PLAIN_MESSAGE);
+                                beneName.setText("");
+                                beneCity.setText("");
+                                //EntName.setText("");
         populateTable();
+         }
+         
     }//GEN-LAST:event_submitBtnActionPerformed
 
 
