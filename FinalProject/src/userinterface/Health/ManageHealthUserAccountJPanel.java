@@ -13,7 +13,9 @@ import Business.Organization.WelfareOrganization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -284,14 +286,25 @@ public class ManageHealthUserAccountJPanel extends javax.swing.JPanel {
                 org.getUserAccountDirectory().createUserAccount(name, password, emp, role,status);
                 Logger.getInstance().writeLogs("Health User created- UserName- "+name);
                 JOptionPane.showMessageDialog(null, "Health User created- UserName- "+name);
+                nameJTextField.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+                passwordJTextField.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+                 nameJTextField.setText("");
+                 passwordJTextField.setText("");
                 popData();
             }
             else{
                  JOptionPane.showMessageDialog(null, "userName already taken. Please change.","Error",JOptionPane.ERROR_MESSAGE);
+                  nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+                  nameJTextField.setText("");
             }
             }
             else{
-                 JOptionPane.showMessageDialog(null, "Please enter all the values","Error",JOptionPane.ERROR_MESSAGE);
+                 JOptionPane.showMessageDialog(null, "Please enter username and password","Error",JOptionPane.ERROR_MESSAGE);
+                  nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+                  passwordJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+                 
+                  nameJTextField.setText("");
+                  passwordJTextField.setText("");
             }
         }
         catch(Exception ex){
