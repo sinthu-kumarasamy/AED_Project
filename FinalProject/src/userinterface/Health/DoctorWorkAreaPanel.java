@@ -118,7 +118,7 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Patient Id", "Patient name", "Statius", "Health Issue"
+                "Patient Id", "Patient name", "Status", "Health Issue"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -199,20 +199,25 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
         else{
             int patient_id = (int) bentable.getValueAt(selectedRow,0);
             String assis_name = availabeAssitant.getSelectedItem().toString();
-            for(Network net:ecosystem.getNetworkList()){
-                for(WelfareEnterprise ent:net.getEnterpriseDirectory().getWelfareEnterpriseList()){
-                  for(WelfareOrganization org:ent.getWelfareOrganizationDirectory().getWelfareOrganizationList()){
-                      if(org.getName().equals("Beneficiary Organization")){
-                        for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
-                             if(ben.getBeneficiaryId()==patient_id){
-                                 ben.setDocStatus("Checkup Inprogress");
-                                 ben.setAssistantName(assis_name);
-                                 populateTable();
-                                 JOptionPane.showMessageDialog(null, "Patient assigned to an assistant", "Success",JOptionPane.PLAIN_MESSAGE);
-                             }
-                        }
+            String availability = (String)bentable.getValueAt(selectedRow,2);
+            if(!availability.equals("Pending")){
+                JOptionPane.showMessageDialog(null,"This patient has been assigned to an assistant already", "Error",JOptionPane.ERROR_MESSAGE);
+            }else{
+                for(Network net:ecosystem.getNetworkList()){
+                    for(WelfareEnterprise ent:net.getEnterpriseDirectory().getWelfareEnterpriseList()){
+                      for(WelfareOrganization org:ent.getWelfareOrganizationDirectory().getWelfareOrganizationList()){
+                          if(org.getName().equals("Beneficiary Organization")){
+                            for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
+                                 if(ben.getBeneficiaryId()==patient_id){
+                                     ben.setDocStatus("Checkup Inprogress");
+                                     ben.setAssistantName(assis_name);
+                                     populateTable();
+                                     JOptionPane.showMessageDialog(null, "Patient assigned to an assistant", "Success",JOptionPane.PLAIN_MESSAGE);
+                                 }
+                            }
+                          }
                       }
-                  }
+                    }
                 }
             }
         }
@@ -222,8 +227,12 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         DefaultTableModel dtm = (DefaultTableModel)bentable.getModel();
         int selectedRow = bentable.getSelectedRow();
+        String availability = (String)bentable.getValueAt(selectedRow,3);
         if(selectedRow <0 ){
             JOptionPane.showMessageDialog(null, "Please select a row", "Warning!",JOptionPane.WARNING_MESSAGE);
+        }
+        else if(!availability.equals("NA")){
+            JOptionPane.showMessageDialog(null,"Necessary Treatment provided for this patient already", "Error",JOptionPane.ERROR_MESSAGE);
         }else{
             String healthissue = JOptionPane.showInputDialog(null,"Update health issue for this patient");
             int patient_id = (int) bentable.getValueAt(selectedRow,0);
@@ -251,6 +260,24 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
 
     private void bentableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bentableMouseClicked
         // TODO add your handling code here:
+        String msg="";
+        int selectedRow = bentable.getSelectedRow();
+        int patient_id = (int) bentable.getValueAt(selectedRow,0);
+        String status = (String) bentable.getValueAt(selectedRow,2);
+        if(status.startsWith("Test")){
+            for(Network net:ecosystem.getNetworkList()){
+               for(WelfareEnterprise ent:net.getEnterpriseDirectory().getWelfareEnterpriseList()){
+                   for(WelfareOrganization org:ent.getWelfareOrganizationDirectory().getWelfareOrganizationList()){
+                       for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
+                           if(patient_id==ben.getBeneficiaryId()){
+                               msg="<html>Temperature:"+ben.getTemp()+"<br>Blood Pressure:"+ben.getBp()+"<br>Pulse:"+ben.getPulse()+"<br>Heart rate:"+ben.getHeartrate()+"</html>";
+                           }
+                       }
+                   }
+               }
+            }
+            JOptionPane.showMessageDialog(null,msg);
+        }
         
     }//GEN-LAST:event_bentableMouseClicked
 

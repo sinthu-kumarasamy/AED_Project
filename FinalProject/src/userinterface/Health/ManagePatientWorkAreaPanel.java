@@ -180,22 +180,27 @@ public class ManagePatientWorkAreaPanel extends javax.swing.JPanel {
         else{
             int patient_id = (int) patientTable.getValueAt(selectedRow,0);
             String doctor = DoctorComboBox.getSelectedItem().toString();
-            for(Network net:ecosystem.getNetworkList()){
-               for(WelfareEnterprise ent:net.getEnterpriseDirectory().getWelfareEnterpriseList()){
-                  for(WelfareOrganization org:ent.getWelfareOrganizationDirectory().getWelfareOrganizationList()){
-                      if(org.getName().equals("Beneficiary Organization")){
-                       for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
-                          if(ben.getBeneficiaryId()==patient_id && ben.getAssistanceType().equals("HealthCare")){
-                                ben.setCheckStatus("Doctor Assigned");
-                                 ben.setAssignedDoc(doctor);
-                                populateTable();
-                           }
+            String availability = (String) patientTable.getValueAt(selectedRow,5);
+            if(!availability.equals("Pending")){
+                JOptionPane.showMessageDialog(null,"This patient has been assigned to a doctor already", "Error",JOptionPane.ERROR_MESSAGE);
+            }else{
+                for(Network net:ecosystem.getNetworkList()){
+                   for(WelfareEnterprise ent:net.getEnterpriseDirectory().getWelfareEnterpriseList()){
+                      for(WelfareOrganization org:ent.getWelfareOrganizationDirectory().getWelfareOrganizationList()){
+                          if(org.getName().equals("Beneficiary Organization")){
+                           for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
+                              if(ben.getBeneficiaryId()==patient_id && ben.getAssistanceType().equals("HealthCare")){
+                                    ben.setCheckStatus("Doctor Assigned");
+                                     ben.setAssignedDoc(doctor);
+                                    populateTable();
+                               }
+                            }
+                          }
                         }
-                      }
                     }
-                }
-              }
-          }
+                  }
+            }
+         }
     }//GEN-LAST:event_assigndocbtnActionPerformed
 
     private void DoctorComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorComboBoxActionPerformed

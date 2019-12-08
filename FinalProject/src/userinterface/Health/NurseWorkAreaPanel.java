@@ -104,7 +104,7 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Patient Id", "Patient name", "Statius"
+                "Patient Id", "Patient name", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -212,7 +212,7 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
                                ben.setPulse(pulse);
                               ben.setDocStatus("Test Completed");
                                populateTable();
-                                JOptionPane.showMessageDialog(null, "Necessary test taken for this user", "Suceess",JOptionPane.PLAIN_MESSAGE);
+                                JOptionPane.showMessageDialog(null, "Necessary test taken for this patient", "Suceess",JOptionPane.PLAIN_MESSAGE);
                            }
                         }
                       }
@@ -227,8 +227,14 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = bentable.getSelectedRow();
         String patient_name = (String) bentable.getValueAt(selectedRow,1);
-        patientName.setText(patient_name);
-        patientName.setEditable(false);
+        String availability = (String)bentable.getValueAt(selectedRow,2);
+        if(availability.endsWith("Completed")){
+            JOptionPane.showMessageDialog(null,"Necessary test taken for this patient already", "Error",JOptionPane.ERROR_MESSAGE);
+        }else{
+            patientName.setText(patient_name);
+            patientName.setEditable(false);
+        }
+        
     }//GEN-LAST:event_bentableMouseClicked
 
 

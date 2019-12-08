@@ -67,8 +67,10 @@ public class ManageBeneficiaryPanel extends javax.swing.JPanel {
                     row[3] = ben.getAssistanceType();
                     if(ben.getStatus()==null){
                         row[4] = "NA";
-                    }else{      
-                        row[4] = ben.getStatus();
+                    }else if(ben.getCheckStatus().equals("Completed")){      
+                        row[4] = ben.getCheckStatus();
+                    }else{
+                         row[4] = ben.getStatus();
                     }
                     row[5] = ben.getEntName();
                     model.addRow(row);
@@ -228,24 +230,28 @@ public class ManageBeneficiaryPanel extends javax.swing.JPanel {
         String benCity =  (String) bentable.getValueAt(selectedRow,2);
         int benId = (int)bentable.getValueAt(selectedRow,0);
         ArrayList<String>entList = new ArrayList<String>();
+        String availability = (String)bentable.getValueAt(selectedRow,4);
         if(assType.equals("HealthCare")){
-            for(Network net:ecosystem.getNetworkList()){
-                if(net.getName().equals(benCity)){
-                    for(HealthEnterprise hel:net.getEnterpriseDirectory().getHospitalnterpriseList()){
-                        entList.add(hel.getName());
+            if(!availability.equals("NA")){
+                JOptionPane.showMessageDialog(null,"This patient has been assigned to a health care already", "Error",JOptionPane.ERROR_MESSAGE);
+            }else{
+                for(Network net:ecosystem.getNetworkList()){
+                    if(net.getName().equals(benCity)){
+                        for(HealthEnterprise hel:net.getEnterpriseDirectory().getHospitalnterpriseList()){
+                            entList.add(hel.getName());
+                        }
                     }
                 }
-            }
-            if(entList.size()>0){
-                Object selectedHel = JOptionPane.showInputDialog(null,"Choose a healthcare","HealthCare selection",JOptionPane.QUESTION_MESSAGE,null,entList.toArray(),entList.get(0));
-                for(Network net:ecosystem.getNetworkList()){
-                    for(WelfareEnterprise ent:net.getEnterpriseDirectory().getWelfareEnterpriseList()){
-                        for(WelfareOrganization org:ent.getWelfareOrganizationDirectory().getWelfareOrganizationList()){
-                            for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
-                                if(benId==ben.getBeneficiaryId()){
+                if(entList.size()>0){
+                    Object selectedHel = JOptionPane.showInputDialog(null,"Choose a healthcare","HealthCare selection",JOptionPane.QUESTION_MESSAGE,null,entList.toArray(),entList.get(0));
+                    for(Network net:ecosystem.getNetworkList()){
+                        for(WelfareEnterprise ent:net.getEnterpriseDirectory().getWelfareEnterpriseList()){
+                            for(WelfareOrganization org:ent.getWelfareOrganizationDirectory().getWelfareOrganizationList()){
+                                for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
                                     if(benId==ben.getBeneficiaryId()){
                                         ben.setAssignedHel(selectedHel.toString());
                                         ben.setStatus("Assigned"+assType);
+
                                     }
                                 }
                             }
