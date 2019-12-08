@@ -215,7 +215,7 @@ public class ManageBeneficiaryPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Added event successfully", "Suceess",JOptionPane.PLAIN_MESSAGE);
                                 beneName.setText("");
                                 beneCity.setText("");
-                                //EntName.setText("");
+                               
         populateTable();
          }
          
