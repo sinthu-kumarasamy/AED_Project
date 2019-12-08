@@ -13,6 +13,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -221,12 +222,15 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 Logger.getInstance().writeLogs("Enterprise created "+name + " Type "+type);
                 JOptionPane.showMessageDialog(null, "Enterprise created "+name + " Type "+type);
                 populateTable();
+             nameJTextField.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3)); 
+                 nameJTextField.setText("");
             }
             else{
                  JOptionPane.showMessageDialog(null, "Please enter a enterprise name","Error",JOptionPane.ERROR_MESSAGE);
-            }
+                  nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3)); 
+                 nameJTextField.setText("");
         }
-        
+         }
         catch(Exception ex){
             Logger.getInstance().exceptionLogs(ex);
         }

@@ -17,8 +17,10 @@ import Business.Role.HealthadminRole;
 import Business.Role.WelfareadminRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -287,14 +289,31 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 UserAccount account = wel.getUserAccountDirectory().createUserAccount(username, password, employee, new WelfareadminRole(),null);
                 Logger.getInstance().writeLogs("User Created for"+enterpriseJComboBox.getSelectedItem().toString());
                 JOptionPane.showMessageDialog(null, "User Created for"+enterpriseJComboBox.getSelectedItem().toString());
+                usernameJTextField.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+                 passwordJPasswordField.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+                 nameJTextField.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+                 usernameJTextField.setText("");
+                 passwordJPasswordField.setText("");
+                 nameJTextField.setText("");
                 populateTable();
                 }
                 else{
                  JOptionPane.showMessageDialog(null, "userName already taken. Please change.","Error",JOptionPane.ERROR_MESSAGE);
+                 usernameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+                 usernameJTextField.setText("");
             }
             }
             else{
                  JOptionPane.showMessageDialog(null, "Please enter all the values","Error",JOptionPane.ERROR_MESSAGE);
+                 usernameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+                 passwordJPasswordField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+                 nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+//                 jLabel2.setForeground(Color.red);
+//                 jLabel4.setForeground(Color.red);
+//                  jLabel5.setForeground(Color.red);
+//                 usernameJTextField.setText("");
+//                 passwordJPasswordField.setText("");
+//                 nameJTextField.setText("");
             }
         }
         catch(Exception ex){
