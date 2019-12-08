@@ -24,6 +24,15 @@ public class Beneficiary {
     int pulse=0;
     String testStatus=null;
     String healthIssue=null;
+    String assignHel=null;
+
+    public String getAssignHel() {
+        return assignHel;
+    }
+
+    public void setAssignHel(String assignHel) {
+        this.assignHel = assignHel;
+    }
 
     public String getHealthIssue() {
         return healthIssue;
