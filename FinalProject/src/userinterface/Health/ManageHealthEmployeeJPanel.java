@@ -12,7 +12,9 @@ import Business.Organization.HealthOrganization;
 import Business.Organization.Organization;
 import Business.Organization.WelfareOrganization;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -189,9 +191,13 @@ public class ManageHealthEmployeeJPanel extends javax.swing.JPanel {
             populateTable();
             Logger.getInstance().writeLogs("Health Employee Created name:- "+name);
             JOptionPane.showMessageDialog(null, "Health Employee Created name:- "+name);
+              nameJTextField.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+                  nameJTextField.setText("");
             }
             else{
-                 JOptionPane.showMessageDialog(null, "Please enter all the values","Error",JOptionPane.ERROR_MESSAGE);
+                 JOptionPane.showMessageDialog(null, "Please enter employee name","Error",JOptionPane.ERROR_MESSAGE);
+                  nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+                  nameJTextField.setText("");
             }
         }
         catch(Exception ex){
