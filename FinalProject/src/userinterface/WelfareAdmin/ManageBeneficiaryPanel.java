@@ -11,7 +11,10 @@ import Business.Enterprise.WelfareEnterprise;
 import Business.Organization.Organization;
 import Business.Organization.WelfareOrganization;
 import Business.UserAccount.UserAccount;
+import java.awt.Color;
 import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -188,6 +191,22 @@ public class ManageBeneficiaryPanel extends javax.swing.JPanel {
         String entname = EntName.getText();
         organization.getBeneficiaryDirectory().addBeneficiary(count, ben_name, ben_city, ass_type, entname);
         populateTable();
+        if(beneName.getText().equals("") || !beneName.getText().matches("[a-z A-Z 0-9]+")){
+                JOptionPane.showMessageDialog(null,"Please enter an valid beneficiary name");
+//                beneName.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+//                beneName.setText("");
+            }
+            if(beneCity.getText().equals("") || !beneCity.getText().matches("[a-z A-Z]+") ){
+               JOptionPane.showMessageDialog(null,"Enter Valid City");
+//               beneCity.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+//               
+//               beneCity.setText("");   
+           }
+            if(EntName.getText().equals("") || !EntName.getText().matches("[a-z A-Z 0-9]+")){
+                JOptionPane.showMessageDialog(null,"Please enter an valid enterprise name");
+//                EntName.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+//                EntName.setText("");
+            }
     }//GEN-LAST:event_submitBtnActionPerformed
 
 
