@@ -67,8 +67,10 @@ public class ManageBeneficiaryPanel extends javax.swing.JPanel {
                     row[3] = ben.getAssistanceType();
                     if(ben.getStatus()==null){
                         row[4] = "NA";
-                    }else if(ben.getCheckStatus().equals("Completed")){      
-                        row[4] = ben.getCheckStatus();
+                    }else if(ben.getCheckStatus()!=null){ 
+                        if(ben.getCheckStatus().equals("Completed")){
+                            row[4] = ben.getCheckStatus();
+                        }
                     }else{
                          row[4] = ben.getStatus();
                     }

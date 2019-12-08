@@ -7,7 +7,7 @@ package Business.Organization;
 
 import Business.Employee.EmployeeDirectory;
 import Business.UserAccount.UserAccountDirectory;
-import Business.WorkQueue.WorkQueue;
+
 
 /**
  *
@@ -16,7 +16,6 @@ import Business.WorkQueue.WorkQueue;
     public abstract class HealthOrganization extends Organization {
 
     private String name;
-    private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private int organizationID;
@@ -39,7 +38,6 @@ import Business.WorkQueue.WorkQueue;
 
     public HealthOrganization(String name) {
         this.name = name;
-        workQueue = new WorkQueue();
         employeeDirectory = new EmployeeDirectory();
         userAccountDirectory = new UserAccountDirectory();
         organizationID = counter;
@@ -63,17 +61,12 @@ import Business.WorkQueue.WorkQueue;
         return name;
     }
 
-    public WorkQueue getWorkQueue() {
-        return workQueue;
-    }
-
+   
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setWorkQueue(WorkQueue workQueue) {
-        this.workQueue = workQueue;
-    }
+  
 
     @Override
     public String toString() {

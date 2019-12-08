@@ -10,7 +10,7 @@ import Business.Contribution.ContributionDetailsDirectory;
 import Business.Employee.EmployeeDirectory;
 import Business.Event.EventDirectory;
 import Business.UserAccount.UserAccountDirectory;
-import Business.WorkQueue.WorkQueue;
+
 
 /**
  *
@@ -19,7 +19,6 @@ import Business.WorkQueue.WorkQueue;
 public abstract class WelfareOrganization extends Organization {
 
     private String name;
-    private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private ContributionDetailsDirectory contributionDirectory;
@@ -45,7 +44,6 @@ public abstract class WelfareOrganization extends Organization {
 
     public WelfareOrganization(String name) {
         this.name = name;
-        workQueue = new WorkQueue();
         employeeDirectory = new EmployeeDirectory();
         userAccountDirectory = new UserAccountDirectory();
         contributionDirectory = new ContributionDetailsDirectory();
@@ -53,6 +51,7 @@ public abstract class WelfareOrganization extends Organization {
         eventDirectory = new EventDirectory();
         organizationID = counter;
         ++counter;
+        
     }
 
     public EventDirectory getEventDirectory() {
@@ -83,17 +82,12 @@ public abstract class WelfareOrganization extends Organization {
         return name;
     }
 
-    public WorkQueue getWorkQueue() {
-        return workQueue;
-    }
+    
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setWorkQueue(WorkQueue workQueue) {
-        this.workQueue = workQueue;
-    }
 
     @Override
     public String toString() {

@@ -337,7 +337,15 @@ public class ManageHealthUserAccountJPanel extends javax.swing.JPanel {
         if (organization != null){
             populateEmployeeComboBox(organization);
             populateRoleComboBox(organization);
+             if(organization.toString().startsWith("ManagePatient")){
+            availLabel.setVisible(false);
+            availabilityComboBox.setVisible(false);
+            }else{
+            availLabel.setVisible(true);
+            availabilityComboBox.setVisible(true);
+            }
         }
+       
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
