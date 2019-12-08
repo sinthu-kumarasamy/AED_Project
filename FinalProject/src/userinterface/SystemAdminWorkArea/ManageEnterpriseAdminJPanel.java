@@ -333,14 +333,25 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 UserAccount account = hel.getUserAccountDirectory().createUserAccount(username, password, employee, new HealthadminRole(),null);
                 Logger.getInstance().writeLogs("User Created for"+enterpriseJComboBox.getSelectedItem().toString());
                 JOptionPane.showMessageDialog(null, "User Created for"+enterpriseJComboBox.getSelectedItem().toString());
+                 usernameJTextField.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+                 passwordJPasswordField.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+                 nameJTextField.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+                 usernameJTextField.setText("");
+                 passwordJPasswordField.setText("");
+                 nameJTextField.setText("");
                 populateTable();
                 }
                 else{
                  JOptionPane.showMessageDialog(null, "userName already taken. Please change.","Error",JOptionPane.ERROR_MESSAGE);
+                  usernameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+                 usernameJTextField.setText("");
             }
             }
             else{
                  JOptionPane.showMessageDialog(null, "Please enter all the values","Error",JOptionPane.ERROR_MESSAGE);
+                 usernameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+                 passwordJPasswordField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+                 nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
             }
         }
         catch(Exception ex){

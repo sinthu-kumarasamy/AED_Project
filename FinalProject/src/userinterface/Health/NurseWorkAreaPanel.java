@@ -13,7 +13,9 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.WelfareOrganization;
 import Business.UserAccount.UserAccount;
+import java.awt.Color;
 import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -210,6 +212,31 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
                       if(org.getName().equals("Beneficiary Organization")){
                         for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
                            if(ben.getBeneficiaryName().equals(patient_name)){
+                               
+                                if(patientName.getText().equals("") || !patientName.getText().matches("[a-zA-Z]+") ){
+                                                JOptionPane.showMessageDialog(null,"Enter Valid patient name");
+//                                                patientName.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+//                                                
+                                                patientName.setText("");
+
+                                        }else if(bpField.getText().isEmpty()||bpField.getText().matches("[0-9]+")){
+//                                            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
+                           
+                                            bpField.setText("");
+                                        }
+                                      else if(tempField.getText().isEmpty()||tempField.getText().matches("[0-9]+")){
+//                                            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
+                                            tempField.setText("");
+                                        }
+                                       else if(heartrateField.getText().isEmpty()||heartrateField.getText().matches("[0-9]+")){
+//                                            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
+                                            heartrateField.setText("");
+                                        }
+                                        else if(pulseField.getText().isEmpty()|| pulseField.getText().matches("[0-9]+")){
+//                                            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
+                                            pulseField.setText("");
+                                        }
+                               
                                ben.setTemp(temp);
                                ben.setBp(bp);
                                ben.setHeartrate(heartRate);

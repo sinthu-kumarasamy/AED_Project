@@ -13,9 +13,11 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.WelfareOrganization;
 import Business.UserAccount.UserAccount;
+import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.TreeMap;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -189,9 +191,11 @@ public class EventManagerWorkAreaPanel extends javax.swing.JPanel {
         String event_fundscollected= fundscollectedJTextField1.getText();
         String event_city = evtCity.getText();
         
-        if(eventnameJTextField.getText().trim().isEmpty())
+       if(eventnameJTextField.getText().trim().isEmpty())
         {
             JOptionPane.showMessageDialog(null, "Please enter a event name","Error",JOptionPane.ERROR_MESSAGE);
+//            eventnameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+            eventnameJTextField.setText("");
         }
         else
         {
@@ -200,6 +204,18 @@ public class EventManagerWorkAreaPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Event Added Successfully");
         }
         
+         if(evtCity.getText().equals("") || !evtCity.getText().matches("[a-z A-Z]+") ){
+            JOptionPane.showMessageDialog(null,"Enter Valid City");
+//            evtCity.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+            
+            evtCity.setText("");
+             
+        }else if(fundscollectedJTextField1.getText().isEmpty()||fundscollectedJTextField1.getText().matches("[0-9]+")){
+            JOptionPane.showMessageDialog(null,"Please enter a Numeric value");
+//            fundscollectedJTextField1.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+//            
+            fundscollectedJTextField1.setText("");
+        }
        
     }//GEN-LAST:event_addJButtonActionPerformed
 
