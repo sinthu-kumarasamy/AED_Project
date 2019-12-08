@@ -14,9 +14,13 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.WelfareOrganization;
 import Business.UserAccount.UserAccount;
+import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.TreeMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -214,13 +218,41 @@ public class ContributorWorkAreaPanel extends javax.swing.JPanel {
         contDetails.setContId(count);
         contDetails.setContName(cont_name);
         contDetails.setContEmail(cont_email);
-        contDetails.setContType(cont_type);
+            contDetails.setContType(cont_type);
         contDetails.setContribution(contribution);
         contDetails.setEntName(entname);
+        if(contName.getText().equals("")  || contEmail.getText().equals("")|| EntName.getText().equals("") || contField.getText().equals("") ){
+             JOptionPane.showMessageDialog(null,"Input fields can't be empty");
+            
+        }
+        else{
         enterprise.getContributionDirectory().addContribution(contDetails);
         populateTable();
+        contName.setText("");
+        contEmail.setText("");
+        EntName.setText("");
+        contField.setText("");
+        }   
+    // else if(!contName.getText().matches("[a-zA-Z0-9]+")){
+//            JOptionPane.showMessageDialog(null,"Please enter an valid input");
+////            contName.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+//            
+//            contName.setText("");
+//        }else if(!emailPatternCorrect()){
+//            JOptionPane.showMessageDialog(null, "Enter an valid email-id");
+////             contEmail.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+//            contEmail.setText("");
+//        }   
+             
+        
+        
     }//GEN-LAST:event_addContBtnActionPerformed
-
+boolean emailPatternCorrect(){
+        Pattern p = Pattern.compile("^[a-zA-Z0-9]+_[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+        Matcher m = p.matcher(contEmail.getText());
+        return  m.matches();
+     }
+     
     private void assignBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignBtnActionPerformed
         // TODO add your handling code here:
         DefaultTableModel dtm = (DefaultTableModel)contTable.getModel();

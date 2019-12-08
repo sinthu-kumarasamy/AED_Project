@@ -213,6 +213,12 @@ public class NurseWorkAreaPanel extends javax.swing.JPanel {
                               ben.setDocStatus("Test Completed");
                                populateTable();
                                 JOptionPane.showMessageDialog(null, "Necessary test taken for this patient", "Suceess",JOptionPane.PLAIN_MESSAGE);
+                                // JOptionPane.showMessageDialog(null, "Necessary test taken for this user", "Suceess",JOptionPane.PLAIN_MESSAGE);
+                                patientName.setText("");
+                                bpField.setText("");
+                                tempField.setText("");
+                                heartrateField.setText("");
+                                pulseField.setText("");
                            }
                         }
                       }

@@ -13,9 +13,11 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.WelfareOrganization;
 import Business.UserAccount.UserAccount;
+import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.TreeMap;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -189,15 +191,25 @@ public class EventManagerWorkAreaPanel extends javax.swing.JPanel {
         String event_fundscollected= fundscollectedJTextField1.getText();
         String event_city = evtCity.getText();
         
-        if(eventnameJTextField.getText().trim().isEmpty())
+        if(eventnameJTextField.getText().trim().isEmpty() || evtCity.getText().equals("")|| fundscollectedJTextField1.getText().isEmpty())
         {
-            JOptionPane.showMessageDialog(null, "Please enter a event name","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please enter all event details","Error",JOptionPane.ERROR_MESSAGE);
+          eventnameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+          evtCity.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+        fundscollectedJTextField1.setBorder(BorderFactory.createLineBorder(Color.RED,3));
+            
         }
         else
         {
         enterprise.getEventDirectory().addEvent(event_id,event_name,enterprise.getName(),event_city,event_fundscollected,null);
         populateTable();
         JOptionPane.showMessageDialog(null, "Event Added Successfully");
+        eventnameJTextField.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+        evtCity.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+        fundscollectedJTextField1.setBorder(BorderFactory.createLineBorder(new Color(153,0,102),3));
+        eventnameJTextField.setText("");
+        evtCity.setText("");
+        fundscollectedJTextField1.setText("");
         }
         
        
