@@ -22,9 +22,38 @@ public class Beneficiary {
     int bp=0;
     int heartrate=0;
     int pulse=0;
+    String assignedHel=null;
     String testStatus=null;
+    String docStatus = null;
     String healthIssue=null;
+    String assignedDoc=null;
 
+    public String getDocStatus() {
+        return docStatus;
+    }
+
+    public void setDocStatus(String docStatus) {
+        this.docStatus = docStatus;
+    }
+    
+   
+
+    public String getAssignedDoc() {
+        return assignedDoc;
+    }
+
+    public void setAssignedDoc(String assignedDoc) {
+        this.assignedDoc = assignedDoc;
+    }
+
+    public String getAssignedHel() {
+        return assignedHel;
+    }
+
+    public void setAssignedHel(String assignedHel) {
+        this.assignedHel = assignedHel;
+    }
+    
     public String getHealthIssue() {
         return healthIssue;
     }

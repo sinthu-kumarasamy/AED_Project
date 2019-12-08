@@ -1,4 +1,4 @@
 
 ManagePatient Organization created
-Health Employee Created name:- Manager1
-Health User created- UserName- Manager1
+Health Employee Created name:- Man
+Health User created- UserName- Man

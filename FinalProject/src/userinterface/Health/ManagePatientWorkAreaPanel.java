@@ -72,26 +72,28 @@ public class ManagePatientWorkAreaPanel extends javax.swing.JPanel {
               for(WelfareOrganization org:ent.getWelfareOrganizationDirectory().getWelfareOrganizationList()){
                   if(org.getName().equals("Beneficiary Organization")){
                     for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
-                       if(ben.getAssistanceType().equals("HealthCare")){
-                            Object[] row = new Object[model.getColumnCount()];
-                             row[0] = ben.getBeneficiaryId();
-                             row[1] = ben.getBeneficiaryName();
-                             row[2] = ben.getBeneficiaryCity();
-                             row[3] = ben.getEntName();
-                             row[4] = healthenterprise.getName();
-                             if(ben.getCheckStatus()==null){
-                                 row[5]="Pending";
-                             }else if(ben.getCheckStatus().equals("Completed")){
-                                 row[5]=ben.getCheckStatus();
-                             }else{
-                                 row[5]=ben.getCheckStatus();
-                             }
-                             if(ben.getHealthIssue()==null){
-                                 row[6]="NA";
-                             }else{
-                                 row[6]=ben.getHealthIssue();
-                             }
-                             model.addRow(row);
+                       if(ben.getAssistanceType().equals("HealthCare") && ben.getAssignedHel()!=null){
+                           if(ben.getAssignedHel().equals(healthenterprise.getName())){
+                                Object[] row = new Object[model.getColumnCount()];
+                                 row[0] = ben.getBeneficiaryId();
+                                 row[1] = ben.getBeneficiaryName();
+                                 row[2] = ben.getBeneficiaryCity();
+                                 row[3] = ben.getEntName();
+                                 row[4] = healthenterprise.getName();
+                                 if(ben.getCheckStatus()==null){
+                                     row[5]="Pending";
+                                 }else if(ben.getCheckStatus().equals("Completed")){
+                                     row[5]=ben.getCheckStatus();
+                                 }else{
+                                     row[5]=ben.getCheckStatus();
+                                 }
+                                 if(ben.getHealthIssue()==null){
+                                     row[6]="NA";
+                                 }else{
+                                     row[6]=ben.getHealthIssue();
+                                 }
+                                 model.addRow(row);
+                           }
                        }
                     }
                   }
@@ -177,6 +179,7 @@ public class ManagePatientWorkAreaPanel extends javax.swing.JPanel {
         }
         else{
             int patient_id = (int) patientTable.getValueAt(selectedRow,0);
+            String doctor = DoctorComboBox.getSelectedItem().toString();
             for(Network net:ecosystem.getNetworkList()){
                for(WelfareEnterprise ent:net.getEnterpriseDirectory().getWelfareEnterpriseList()){
                   for(WelfareOrganization org:ent.getWelfareOrganizationDirectory().getWelfareOrganizationList()){
@@ -184,6 +187,7 @@ public class ManagePatientWorkAreaPanel extends javax.swing.JPanel {
                        for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
                           if(ben.getBeneficiaryId()==patient_id && ben.getAssistanceType().equals("HealthCare")){
                                 ben.setCheckStatus("Doctor Assigned");
+                                ben.setAssignedDoc(doctor);
                                 populateTable();
                            }
                         }

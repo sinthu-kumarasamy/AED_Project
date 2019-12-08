@@ -32,11 +32,13 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
      JPanel userProcessContainer;
     HealthEnterprise enterprise;
     EcoSystem ecosystem;
+    UserAccount ua;
     public DoctorWorkAreaPanel(JPanel userProcessContainer, EcoSystem business, HealthEnterprise enterprise, Organization organization, UserAccount account) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
         this.ecosystem=business;
+        this.ua = account;
         bentable.getTableHeader().setFont(new Font("TImes New Roman",Font.BOLD,18));
         bentable.setRowHeight(30);
        bentable.setRowMargin(10);
@@ -63,24 +65,24 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
               for(WelfareOrganization org:ent.getWelfareOrganizationDirectory().getWelfareOrganizationList()){
                   if(org.getName().equals("Beneficiary Organization")){
                     for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
-                       if(ben.getAssistanceType().equals("HealthCare")){
-                            Object[] row = new Object[dtm.getColumnCount()];
-                             row[0] = ben.getBeneficiaryId();
-                             row[1] = ben.getBeneficiaryName();
-                             System.out.println(ben.getCheckStatus());
-                             if(ben.getCheckStatus()==null){
-                                 row[2]="Pending";
-                             }else if(ben.getCheckStatus().equals("Completed")){
-                                 row[2]=ben.getCheckStatus();
-                             }else{
-                                 row[2]=ben.getCheckStatus();
-                             }
-                             if(ben.getHealthIssue()==null){
-                                 row[3]="NA";
-                             }else{
-                                 row[3]=ben.getHealthIssue();
-                             }
-                             dtm.addRow(row);
+                       if(ben.getAssistanceType().equals("HealthCare") && ben.getAssignedDoc()!=null){
+                           if(ben.getAssignedDoc().equals(ua.getEmployee().getName())){
+                                Object[] row = new Object[dtm.getColumnCount()];
+                                 row[0] = ben.getBeneficiaryId();
+                                 row[1] = ben.getBeneficiaryName();
+                                 System.out.println(ben.getCheckStatus());
+                                 if(ben.getDocStatus()==null){
+                                     row[2]="Pending";
+                                 }else{
+                                     row[2]=ben.getDocStatus();
+                                 }
+                                 if(ben.getHealthIssue()==null){
+                                     row[3]="NA";
+                                 }else{
+                                     row[3]=ben.getHealthIssue();
+                                 }
+                                 dtm.addRow(row);
+                           }
                        }
                     }
                   }
@@ -116,7 +118,7 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Patient Id", "Patient name", "Statius", "Health Issue"
+                "Patient Id", "Patient name", "Status", "Health Issue"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -203,7 +205,7 @@ public class DoctorWorkAreaPanel extends javax.swing.JPanel {
                       if(org.getName().equals("Beneficiary Organization")){
                         for(Beneficiary ben:org.getBeneficiaryDirectory().getBeneficiaryDirectory()){
                              if(ben.getBeneficiaryId()==patient_id){
-                                 ben.setCheckStatus("Checkup Inprogress");
+                                 ben.setDocStatus("Checkup Inprogress");
                                  ben.setAssistantName(assis_name);
                                  populateTable();
                                  JOptionPane.showMessageDialog(null, "Patient assigned to an assistant", "Success",JOptionPane.PLAIN_MESSAGE);
